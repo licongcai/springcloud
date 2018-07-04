@@ -1,0 +1,14 @@
+#eureka server �˿�
+server:
+  port: 8801
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    registWithEureka: false  #  ͨ��eureka.client.registerWithEureka��false��fetchRegistry��false�������Լ���һ��eureka server.
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+

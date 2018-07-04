@@ -1,0 +1,22 @@
+eureka:
+  client:
+      serviceUrl:
+        defaultZone: http://127.0.0.1:8801/eureka/
+
+server:
+  port: 8802
+
+spring:
+  application:
+    name: service-zuul
+
+#根据配置routes的path转发给对应的service 如 :以/api-a/ 开头的请求都转发给service-ribbon服务；以/api-b/开头的请求都转发给service-feign服务；
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-ribbon
+    api-b:
+      path: /api-b/**
+      serviceId: service-feign
+

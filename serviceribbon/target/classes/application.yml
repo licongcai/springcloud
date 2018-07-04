@@ -1,0 +1,16 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8801/eureka/
+
+server:
+  port: 6666
+
+spring:
+  application:
+    name: service-ribbon
+
+ribbon:
+  eureka:
+    enabled: true
+
